@@ -20,9 +20,6 @@ class HomePageBody extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width * 0.04,
         ),
-        // child: SingleChildScrollView(
-        // physics: BouncingScrollPhysics(),
-        // scrollDirection: Axis.vertical,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -45,10 +42,7 @@ class HomePageBody extends StatelessWidget {
               child: CustomSearchBar(),
             ),
             const SizedBox(height: 36),
-
             Expanded(child: CategoriesList()),
-
-            // const SizedBox(height: 75),
           ],
         ),
         // ),

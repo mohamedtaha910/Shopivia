@@ -3,6 +3,7 @@ import 'package:e_commerce_app/features/cart/presentation/views/cart_page.dart';
 import 'package:e_commerce_app/features/notification/presentation/view/notification_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:iconsax/iconsax.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -13,7 +14,7 @@ class CustomAppBar extends StatelessWidget {
       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
-          padding: const EdgeInsets.all(3.5),
+          padding: const EdgeInsets.all(4),
           decoration: BoxDecoration(
             // color: Colors.grey.shade50,
             color: Colors.grey.shade200,
@@ -21,7 +22,7 @@ class CustomAppBar extends StatelessWidget {
             // borderRadius: BorderRadius.circular(25),
             // border: Border.all(color: Colors.grey.shade400 , width: 0.6),
           ),
-          child: Image.asset('assets/icons/shopping-bag (1).png', height: 33),
+          child: Image.asset('assets/icons/logo_icon.png', height: 32),
           // SvgPicture.asset(
           //   'assets/icons/logo.svg',
           //   color: AppColors.primaryColor,

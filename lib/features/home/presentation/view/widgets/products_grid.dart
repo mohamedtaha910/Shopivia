@@ -2,7 +2,6 @@ import 'package:e_commerce_app/features/home/presentation/view/widgets/custom_no
 import 'package:e_commerce_app/features/home/presentation/view/widgets/product_grid_shimmer.dart';
 import 'package:e_commerce_app/features/home/presentation/view/widgets/product_item.dart';
 import 'package:e_commerce_app/features/home/presentation/view_model/get_products/get_products_cubit.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -66,16 +65,7 @@ class ProductGrid extends StatelessWidget {
                       Colors.white.withAlpha(25),
                       Colors.white.withAlpha(0),
 
-                      // Colors.white,
-                      // Colors.white.withAlpha(250),
-                      // Colors.white.withAlpha(240),
-                      // Colors.white.withAlpha(230),
-                      // Colors.white.withAlpha(180),
-                      // // Colors.white.withAlpha(180),
-                      // Colors.white.withAlpha(100),
-                      // // Colors.white.withAlpha(80),
-                      // // Colors.white.withAlpha(50),
-                      // Colors.white.withAlpha(5),
+                      
                     ],
                   ),
                 ),

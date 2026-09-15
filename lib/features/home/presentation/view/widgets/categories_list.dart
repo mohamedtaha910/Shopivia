@@ -30,9 +30,8 @@ class _CategoriesListState extends State<CategoriesList> {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: <Widget>[
         SvgPicture.asset('assets/icons/Categories.svg'),
-
         const SizedBox(height: 16),
         //  category list
         BlocBuilder<GetCategoriesCubit, GetCategoriesState>(
@@ -55,46 +54,7 @@ class _CategoriesListState extends State<CategoriesList> {
                   physics: BouncingScrollPhysics(),
                   itemCount: categories.length,
                   itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          selectedCategory = categories[index];
-                          BlocProvider.of<GetProductsCubit>(
-                            context,
-                          ).getProducts(category: selectedCategory);
-                        });
-                      },
-                      child: Container(
-                        // width: 80,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 22,
-                          vertical: 6,
-                        ),
-                        margin: const EdgeInsets.only(right: 10),
-                        decoration: BoxDecoration(
-                          color: selectedCategory == categories[index]
-                              ? AppColors.primaryColor
-                              : Colors.grey.shade200,
-                          borderRadius: BorderRadius.circular(12),
-                          // border: Border.all(color: Colors.black12, width: 0.3),
-                        ),
-                        child: Center(
-                          child: Text(
-                            categories[index],
-                            style: TextStyle(
-                              fontSize: 12,
-                              // color: AppColors.text2Color,
-                              color: selectedCategory == categories[index]
-                                  ? Colors.white
-                                  : Colors.black38,
-                              fontWeight: selectedCategory == categories[index]
-                                  ? FontWeight.w700
-                                  : FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
+                    return buildCategoryItem(index, context);
                   },
                 ),
               );
@@ -110,4 +70,48 @@ class _CategoriesListState extends State<CategoriesList> {
       ],
     );
   }
+
+  GestureDetector buildCategoryItem(int index, BuildContext context) {
+    return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedCategory = categories[index];
+                        BlocProvider.of<GetProductsCubit>(
+                          context,
+                        ).getProducts(category: selectedCategory);
+                      });
+                    },
+                    child: Container(
+                      // width: 80,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 22,
+                        vertical: 6,
+                      ),
+                      margin: const EdgeInsets.only(right: 10),
+                      decoration: BoxDecoration(
+                        color: selectedCategory == categories[index]
+                            ? AppColors.primaryColor
+                            : Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(12),
+                        // border: Border.all(color: Colors.black12, width: 0.3),
+                      ),
+                      child: Center(
+                        child: Text(
+                          categories[index],
+                          style: TextStyle(
+                            fontSize: 12,
+                            // color: AppColors.text2Color,
+                            color: selectedCategory == categories[index]
+                                ? Colors.white
+                                : Colors.black38,
+                            fontWeight: selectedCategory == categories[index]
+                                ? FontWeight.w700
+                                : FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+  }
+
 }
