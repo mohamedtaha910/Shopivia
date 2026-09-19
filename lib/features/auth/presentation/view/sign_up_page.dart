@@ -30,14 +30,14 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
-        if (state is RegisterLoadingState) {
+        if (state is AuthLoadingState) {
           isLoading = true;
-        } else if (state is RegisterSuccessState) {
+        } else if (state is AuthSuccessState) {
           isLoading = false;
           Navigator.of(
             context,
           ).push(MaterialPageRoute(builder: (context) => const HomePage()));
-        } else if (state is RegisterErrorState) {
+        } else if (state is AuthErrorState) {
           isLoading = false;
           showErrorMessage(context, message: state.error);
         }

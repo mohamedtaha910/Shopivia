@@ -21,8 +21,8 @@ class WelcomePage extends StatelessWidget {
                 decoration: BoxDecoration(
                   // color: Color(0xFF1C1C1E),
                   borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(32),
-                    bottomRight: Radius.circular(32),
+                    bottomLeft: Radius.circular(18),
+                    bottomRight: Radius.circular(18),
                   ),
                   gradient: LinearGradient(
                     begin: Alignment.bottomCenter,

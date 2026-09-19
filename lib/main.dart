@@ -21,12 +21,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  WidgetsFlutterBinding.ensureInitialized();
+  // WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter();
 
@@ -38,6 +39,9 @@ void main() async {
   Hive.registerAdapter(OrderAdapter());
 
   setUpServiceLocator();
+  await GoogleSignIn.instance.initialize(
+    serverClientId: '727044072264-64m0c3tnih5lg41mpohe353js9916sdb.apps.googleusercontent.com',
+  );
   runApp(const MyApp());
 }
 

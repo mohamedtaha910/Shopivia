@@ -45,7 +45,9 @@
 // }
 
 // ==========================================
+import 'package:e_commerce_app/features/auth/presentation/view_model/auth_cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 class OtherWay extends StatelessWidget {
@@ -62,7 +64,7 @@ class OtherWay extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 0),
       child: Column(
         children: [
-          // ── Divider ────────────────────────────────────────────────────
+          //  Divider
           Row(
             children: [
               const Expanded(child: Divider(thickness: 0.8, color: _kGray300)),
@@ -83,7 +85,7 @@ class OtherWay extends StatelessWidget {
 
           const SizedBox(height: 16),
 
-          // ── Social buttons ─────────────────────────────────────────────
+          //  Social buttons
           Row(
             children: [
               Expanded(
@@ -93,7 +95,9 @@ class OtherWay extends StatelessWidget {
                     'assets/auth_images/google.svg',
                     height: 24,
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    BlocProvider.of<AuthCubit>(context).signInWithGoogle();
+                  },
                 ),
               ),
               const SizedBox(width: 12),
@@ -161,18 +165,3 @@ class _SocialBtn extends StatelessWidget {
     );
   }
 }
-
-// Inline Google "G" icon using colored text (no asset needed)
-// class _GoogleIcon extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Text(
-//       'G',
-//       style: TextStyle(
-//         fontSize: 16,
-//         fontWeight: FontWeight.w700,
-//         color: Color(0xFF4285F4),
-//       ),
-//     );
-//   }
-// }

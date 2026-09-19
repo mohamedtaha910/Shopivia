@@ -111,8 +111,18 @@ class _ProfileHeaderState extends State<ProfileHeader> {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.5,
               child: Text(
-                FirebaseAuth.instance.currentUser?.email!.split('@')[0] ??
+                FirebaseAuth
+                        .instance
+                        .currentUser
+                        ?.providerData
+                        .first
+                        .displayName
+                        ?.toString() ??
+                    FirebaseAuth.instance.currentUser?.email!.split('@')[0] ??
                     'UnKnown User',
+
+                // FirebaseAuth.instance.currentUser?.email!.split('@')[0] ??
+                //     'UnKnown User',
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
               ),
             ),

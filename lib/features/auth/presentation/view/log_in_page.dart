@@ -31,14 +31,14 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
-        if (state is LoginLoadingState) {
+        if (state is AuthLoadingState) {
           isLoading = true;
-        } else if (state is LoginSuccessState) {
+        } else if (state is AuthSuccessState) {
           isLoading = false;
           Navigator.of(
             context,
           ).push(MaterialPageRoute(builder: (context) => const HomePage()));
-        } else if (state is LoginErrorState) {
+        } else if (state is AuthErrorState) {
           isLoading = false;
           showErrorMessage(context, message: state.error);
         }
