@@ -69,7 +69,7 @@ class _GlassNavBar extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(50),
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+        filter: ImageFilter.blur(sigmaX: 7, sigmaY: 6),
         child: Container(
           padding: EdgeInsets.all(3),
           // height: 62,
@@ -80,29 +80,33 @@ class _GlassNavBar extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Colors.grey.shade300.withOpacity(0.38),
-                Colors.grey.shade300.withOpacity(0.20),
-                Colors.grey.shade300.withOpacity(0.18),
+                Colors.grey.shade200.withOpacity(0.38),
+                Colors.grey.shade200.withOpacity(0.20),
+                Colors.grey.shade200.withOpacity(0.18),
               ],
               stops: const [0.0, 0.5, 1.0],
             ),
             border: Border(
               top: BorderSide(
-                color: Colors.grey.shade100.withOpacity(0.6),
-                width: 1,
+                color: Colors.grey.shade400.withAlpha(30),
+                width: 1.4,
+              ),
+              bottom: BorderSide(
+                color: Colors.grey.shade400.withAlpha(30),
+                width: 1.2,
               ),
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.08),
+                color: Colors.black.withOpacity(0.09),
                 blurRadius: 24,
                 offset: const Offset(0, 8),
               ),
-              BoxShadow(
-                color: Colors.white.withOpacity(0.5),
-                blurRadius: 1,
-                offset: const Offset(0, -1),
-              ),
+              // BoxShadow(
+              //   color: Colors.white.withOpacity(0.5),
+              //   blurRadius: 1,
+              //   offset: const Offset(0, -1),
+              // ),
             ],
           ),
           child: Row(
@@ -150,7 +154,7 @@ class _GlassNavItem extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    AppColors.primaryColor.withOpacity(0.40),
+                    AppColors.primaryColor.withOpacity(0.50),
                     AppColors.primaryColor.withOpacity(0.1),
                   ],
                 ),

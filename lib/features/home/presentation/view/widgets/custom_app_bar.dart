@@ -22,7 +22,7 @@ class CustomAppBar extends StatelessWidget {
             // borderRadius: BorderRadius.circular(25),
             // border: Border.all(color: Colors.grey.shade400 , width: 0.6),
           ),
-          child: Image.asset('assets/icons/logo_icon.png', height: 32),
+          child: Image.asset('assets/icons/logo_icon.png', height: 30),
           // SvgPicture.asset(
           //   'assets/icons/logo.svg',
           //   color: AppColors.primaryColor,
