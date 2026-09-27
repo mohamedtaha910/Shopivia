@@ -42,7 +42,7 @@ class ProductGridShimmer extends StatelessWidget {
                         colors: [Colors.grey.shade200, Colors.grey.shade100],
                       ),
                       child: Container(
-                        height: 180,
+                        height: 170,
                         width: 160,
                         padding: const EdgeInsets.symmetric(
                           horizontal: 12,
@@ -57,7 +57,7 @@ class ProductGridShimmer extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Container(
-                    height: 6,
+                    height: 12,
                     width: 160,
                     margin: EdgeInsets.symmetric(horizontal: 6),
                     decoration: BoxDecoration(
@@ -66,15 +66,19 @@ class ProductGridShimmer extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 8),
-                  Container(
-                    height: 6,
-                    width: 160,
-                    margin: EdgeInsets.symmetric(horizontal: 6),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.grey.shade200,
-                    ),
+                  Text(
+                    '\$ 0.00',
+                    style: TextStyle(color: Colors.grey.shade300, fontSize: 17),
                   ),
+                  // Container(
+                  //   height: 6,
+                  //   width: 160,
+                  //   margin: EdgeInsets.symmetric(horizontal: 6),
+                  //   decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(12),
+                  //     color: Colors.grey.shade200,
+                  //   ),
+                  // ),
                 ],
               );
             },

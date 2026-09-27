@@ -76,7 +76,6 @@ class _PaymentPageState extends State<PaymentPage> {
       ),
       body: Column(
         children: [
-          // 🏠 Address Section
           _sectionTitle("Shipping Address"),
           _card(
             child: ListTile(
@@ -91,7 +90,7 @@ class _PaymentPageState extends State<PaymentPage> {
             ),
           ),
 
-          // 💳 Payment Methods
+          //  Payment Methods
           _sectionTitle("Payment Method"),
 
           _paymentTile(0, Icons.credit_card, "Credit Card"),
@@ -99,8 +98,6 @@ class _PaymentPageState extends State<PaymentPage> {
           _paymentTile(2, Icons.paypal, "PayPal"),
 
           const Spacer(),
-
-          // 💰 Total + Pay Button
         ],
       ),
       bottomNavigationBar: Stack(
@@ -161,7 +158,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       style: TextStyle(
                         fontSize: 15,
                         // fontWeight: FontWeight.w500,
-                        color: Colors.black54,
+                        color: Colors.green,
                       ),
                     ),
                   ],

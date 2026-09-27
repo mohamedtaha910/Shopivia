@@ -31,7 +31,7 @@ class ProductDetailsPage extends StatelessWidget {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 30, sigmaY: 15),
             child: AppBar(
-              backgroundColor: Colors.transparent,
+              backgroundColor: Colors.white.withAlpha(120),
               surfaceTintColor: Colors.transparent,
               elevation: 0,
               automaticallyImplyLeading: false,

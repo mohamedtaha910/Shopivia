@@ -12,6 +12,7 @@ import 'package:e_commerce_app/features/favourite/presentation/view_model/favour
 import 'package:e_commerce_app/features/home/data/repos/home_repo_implementation.dart';
 import 'package:e_commerce_app/features/home/presentation/view_model/get_categories_cubit/get_categories_cubit.dart';
 import 'package:e_commerce_app/features/home/presentation/view_model/get_products/get_products_cubit.dart';
+import 'package:e_commerce_app/features/notification/data/services/notification_services.dart';
 import 'package:e_commerce_app/features/order/data/models/order_model.dart';
 import 'package:e_commerce_app/features/order/data/repos/order_repo_implementation.dart';
 import 'package:e_commerce_app/features/order/presentation/view_model/order_cubit/order_cubit.dart';
@@ -30,6 +31,7 @@ void main() async {
   // WidgetsFlutterBinding.ensureInitialized();
 
   await Hive.initFlutter();
+  await NotificationService.init();
 
   Hive.registerAdapter(ProductAdapter());
   Hive.registerAdapter(DimensionsAdapter());
@@ -40,7 +42,8 @@ void main() async {
 
   setUpServiceLocator();
   await GoogleSignIn.instance.initialize(
-    serverClientId: '727044072264-64m0c3tnih5lg41mpohe353js9916sdb.apps.googleusercontent.com',
+    serverClientId:
+        '727044072264-64m0c3tnih5lg41mpohe353js9916sdb.apps.googleusercontent.com',
   );
   runApp(const MyApp());
 }
